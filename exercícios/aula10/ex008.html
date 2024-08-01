@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #222;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px #000a;
+
+            width: 700px;
+            height: 500px;
+
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        section h1 {
+            background-color: orange;
+            height: 2em;
+            line-height: 2em;
+            margin: 20px 0;
+        }
+
+        section div {
+            margin: 30px 0;
+        }
+        
+        section .field input {
+            width: 60px;
+            font-size: 0.9em;
+        }
+
+        section .field button {
+            width: 100px;
+            height: 50px;
+
+            font-size: 1em;
+        }
+        
+        span#settings-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 2.3em;
+            cursor: pointer;
+        }
+        
+        section#admSettings {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 300px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        #darken-display {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.521);
+            transition: display .5s;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>DETRAN</h1>
+            <div class="field">
+                <label for="inptSpeed">Velocidade do veículo:</label>
+                <input type="number" name="speed" id="inptSpeed" min="0" max="299" placeholder="60"> Km/h.
+            </div>
+            <div class="field">
+                <button onclick="analizeSpeed()">Enviar</button>
+            </div>
+            <div id="result"></div>
+        </section>
+        <div id="darken-display" style="display: none;">
+            <section id="admSettings">
+                <h1>Configurações</h1>
+                <div class="field">
+                    <label for="imaxSpeed">Velocidade Máxima: </label>
+                    <input type="number" name="maxSpeed" id="imaxSpeed">
+                </div>
+                <div class="field">
+                    <button onclick="setMaxSpeed()">Aplicar</button>
+                </div>
+                <div id="settings-applied"></div>
+            </section>
+        </div>
+        <span id="settings-icon" class="material-symbols-rounded" onclick="showSettingsMenu()">settings</span>
+    </main>
+    <script>
+        const divRes = document.getElementById('result')
+        const sectadmSettings = document.getElementById('darken-display')
+        const inptNewMaxSpeed = document.querySelector('input#imaxSpeed')
+        const divSettingsAplied = document.querySelector('#settings-applied')
+        
+        var maxSpeed = 60
+
+        function setMaxSpeed() {
+            maxSpeed = Number(inptNewMaxSpeed.value)
+            divSettingsAplied.innerHTML = 'Velocidade máxima atualizada!'
+        }
+
+        function showSettingsMenu() {
+            if (sectadmSettings.style.display == 'none') {
+                sectadmSettings.style.display = 'block'
+                divSettingsAplied.innerHTML = ''
+            } else {
+                sectadmSettings.style.display = 'none'
+            }
+        }
+        
+        function analizeSpeed() {
+            let speed = Number(document.getElementById('inptSpeed').value)
+
+            divRes.innerHTML = `<p>Sua velocidade é de <strong>${speed} km/h</strong>.</p>`
+
+            if (maxSpeed < speed && speed <= maxSpeed + 10) {
+                divRes.innerHTML += '<p>Atenção! Você está <strong>acima</strong> do limite de velocidade.</p>'
+            } else if (speed > maxSpeed + 10) {
+                divRes.innerHTML += '<p>Você foi <strong>multado</strong> por excesso de velocidade!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
