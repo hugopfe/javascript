@@ -122,6 +122,9 @@
             <span id="settings-icon" class="material-symbols-rounded" onclick="showSettingsMenu()">settings</span>
         </div>
     </main>
+
+    <!-- JAVASCRPIT -->
+
     <script>
         const divRes = document.getElementById('result')
         var divSettingsMenu = document.getElementById('settings-menu')
@@ -138,13 +141,9 @@
         function showSettingsMenu() {
             if (divSettingsMenu.style.left == '0px') {
                 divSettingsMenu.style.left = '-310px'
-                // divSettingsMenu.style.backgroundColor = 'transparent'
-                // divSettingsMenu.style.display = 'none'
                 divSettingsAplied.innerHTML = ''
             } else {
                 divSettingsMenu.style.left = '0px'
-                // divSettingsMenu.style.backgroundColor = 'rgba(0, 0, 0, 0.521)'
-                // divSettingsMenu.style.display = 'block'
             }
         }
         
