@@ -18,6 +18,7 @@
             background-color: #222;
             width: 100vw;
             height: 100vh;
+            overflow: hidden;
         }
 
         main {
@@ -63,33 +64,33 @@
 
             font-size: 1em;
         }
-        
+
+        div#settings-menu {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            height: 100%;
+            transition: background-color .5s, left .5s;
+        }
+
         span#settings-icon {
             position: absolute;
+            float: right;
             top: 20px;
-            left: 20px;
+            left: 320px;
             color: white;
             font-size: 2.3em;
             cursor: pointer;
         }
         
-        section#admSettings {
-            position: absolute;
+        section#adm-settings {
+            float: left;
             left: 0;
+            top: 0;
             height: 100%;
             width: 300px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-        }
-
-        #darken-display {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.521);
-            transition: display .5s;
         }
     </style>
 </head>
@@ -106,8 +107,8 @@
             </div>
             <div id="result"></div>
         </section>
-        <div id="darken-display" style="display: none;">
-            <section id="admSettings">
+        <div id="settings-menu" style="left: -310px;">
+            <section id="adm-settings">
                 <h1>Configurações</h1>
                 <div class="field">
                     <label for="imaxSpeed">Velocidade Máxima: </label>
@@ -118,12 +119,12 @@
                 </div>
                 <div id="settings-applied"></div>
             </section>
+            <span id="settings-icon" class="material-symbols-rounded" onclick="showSettingsMenu()">settings</span>
         </div>
-        <span id="settings-icon" class="material-symbols-rounded" onclick="showSettingsMenu()">settings</span>
     </main>
     <script>
         const divRes = document.getElementById('result')
-        const sectadmSettings = document.getElementById('darken-display')
+        var divSettingsMenu = document.getElementById('settings-menu')
         const inptNewMaxSpeed = document.querySelector('input#imaxSpeed')
         const divSettingsAplied = document.querySelector('#settings-applied')
         
@@ -135,11 +136,15 @@
         }
 
         function showSettingsMenu() {
-            if (sectadmSettings.style.display == 'none') {
-                sectadmSettings.style.display = 'block'
+            if (divSettingsMenu.style.left == '0px') {
+                divSettingsMenu.style.left = '-310px'
+                // divSettingsMenu.style.backgroundColor = 'transparent'
+                // divSettingsMenu.style.display = 'none'
                 divSettingsAplied.innerHTML = ''
             } else {
-                sectadmSettings.style.display = 'none'
+                divSettingsMenu.style.left = '0px'
+                // divSettingsMenu.style.backgroundColor = 'rgba(0, 0, 0, 0.521)'
+                // divSettingsMenu.style.display = 'block'
             }
         }
         
