@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: rgb(85, 15, 15);
+            color: rgb(255, 217, 0);
+            font: bold 20pt "Century Gothic";
+            text-align: center;
+        }
+
+        h2 {
+            color: rgb(255, 255, 255);
+            font: normal 18pt "Century Gothic";
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            text-align: left;
+            font: normal 16pt "Century Gothic";
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Document Object Model</h1> <!--Título de NÍVEL 1-->
+    <p id="result">Aqui vai o resultado</p>
+    <p>Apendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="clickAction">Clique em mim.</div>
+
+    <script>
+        var p1 = document.querySelector('p#result')
+        var click = document.querySelector('div#clickAction')
+        p1.innerText = "הוּ מֶלֶך הַכַּבוֹד"
+
+    </script>
+</body>
+</html>

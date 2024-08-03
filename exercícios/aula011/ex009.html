@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <p>De qual país você é?</p>
+    <input type="text" name="inptCountry" id="inptCountry">
+    <input type="button" value="Enviar">
+    <div id="answer"></div>
+    <script>
+            var inptAnswer = document.getElementById("inptCountry")
+            var btn = document.querySelector("input[type='button']")
+            btn.addEventListener('click', send)
+
+            var divAnswer = document.getElementById('answer')
+
+            var nationality = null
+
+
+            function send() {
+
+                    if (inptAnswer.value.toUpperCase() == "BRASIL") {
+                        nationality = "brasileiro"
+                    } else {
+                        nationality = "estrangeiro"
+                    }
+
+                divAnswer.innerHTML = `<p>Você é <strong>${nationality}</strong>.</p>`
+            }
+    </script>
+</body>
+</html>

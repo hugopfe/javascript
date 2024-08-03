@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador DOM</title>
+    <style>
+        div{
+            color: rgb(255, 255, 255);
+            text-align: left;
+            font: normal 30pt "Century Gothic";     
+        }
+
+        div#count {
+            color: black;
+            width: 200px;
+            text-align: center;
+            margin: 50px 0px 50px;
+        }
+
+        div#btn {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            display: inline-block;
+        }
+
+        div.plusBtn {
+            background-color: rgb(73, 212, 96);
+        }
+
+        div.minusBtn {
+            background-color: rgb(212, 73, 73);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="count">1200</div>
+    <div id="btn" class="plusBtn" onmouseenter="entered('plusBtn')" onmouseleave="leaved('plusBtn')" onclick="sum()">+</div>
+    <div id="btn" class="minusBtn" onmouseenter="entered('minusBtn')" onmouseleave="leaved('minusBtn')" onclick="subtract()">-</div>
+
+    <script>
+        
+        function sum() {
+            
+            let divCount = document.querySelector('div#count')
+            let count = Number(divCount.innerText) + 1
+            divCount.innerHTML = `${count}`
+            
+        }
+        
+        function subtract() {
+            let divCount = document.getElementById('count')
+            let count = Number(divCount.innerText) - 1
+
+            divCount.innerHTML = `${count}`
+        }
+        
+        function entered(divClass) {
+            let divBtn = document.querySelector(`div.${divClass}`)
+
+            divBtn.style.backgroundBlendMode = "soft-light"
+        }
+
+        function leaved(divClass) {
+            let divBtn = document.querySelector(`div.${divClass}`)
+
+            divBtn.style.backgroundColor = "rgb(212, 73, 73)"
+        }
+    </script>
+</body>
+</html>

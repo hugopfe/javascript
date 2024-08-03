@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Aritméticos</title>
+    <style>
+        body {
+            background-color: rgb(85, 15, 15);
+            color: rgb(255, 217, 0);
+            font: bold 20pt "Century Gothic";
+            text-align: center;
+        }
+
+        h2 {
+            color: rgb(255, 255, 255);
+            font: normal 18pt "Century Gothic";
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            text-align: left;
+            font: normal 16pt "Century Gothic";
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Fazendo Contas</h1> <!--Título de NÍVEL 1-->
+    <script>
+        var n1 = Number(prompt("Digite um número."))
+        var n2 = Number(prompt("Digite outro número."))
+
+        document.write(`<h2>Você digitou os números <u>${n1}</u> e <u>${n2}</u>.</h2>`)
+
+        document.writeln(`<p>${n1} + ${n2} = ${n1 + n2}</p>`)
+        document.writeln(`<p>${n1} - ${n2} = ${n1 - n2}</p>`)
+        document.writeln(`<p>${n1} * ${n2} = ${n1 * n2}</p>`)
+        document.writeln(`<p>${n1} / ${n2} = ${(n1 / n2).toFixed(2)}</p>`)
+        document.writeln(`<p>${n1} % ${n2} = ${n1 % n2}</p>`)
+        document.writeln(`<p>${n1} ** ${n2} = ${n1 ** n2}</p>`)
+
+        document.writeln(`<p>O primeiro número é ${n1%2==0?"par":"ímpar"}.</p>`)
+    </script>
+</body>
+</html>
