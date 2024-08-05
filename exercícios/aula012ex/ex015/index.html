@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media-queries.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Identificador</h1>
+        </header>
+        <section>
+            <div id="div-form">
+                <div id="field">
+                    <label for="id-year">Ano Nascimento: </label>
+                    <input type="number" name="input-year" id="id-year" min="1920" max="2024" value="2024">
+                </div>
+                <div id="field">
+                    <span>Sexo: </span>
+                    <input type="radio" name="genre" id="genre-m" value="m" checked><label for="genre-m"> Masculino</label>
+                    <input type="radio" name="genre" id="genre-w" value="w"><label for="genre-w"> Feminino</label>
+                </div>
+                <div>
+                    <button type="submit" onclick="showResult()">Enviar</button>
+                </div>
+            </div>
+            <div id="div-result">
+                <p>Preencha o formulário acima</p>
+            </div>
+        </section>
+        <footer><p>&copy;CursoemVídeo</p></footer>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

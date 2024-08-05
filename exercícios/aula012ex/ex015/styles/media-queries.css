@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.1) 100%);
+    }
+    
+    section {
+        width: 500px;
+        min-height: 300px;
+    }
+    
+    section > #div-result > img {
+        width: 300px;
+    }
+}
