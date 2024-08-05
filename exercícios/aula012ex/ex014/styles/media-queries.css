@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.2) 100%);
+    }
+    
+    section {
+        width: 700px;
+        height: 500px;
+    }
+    
+    section > #div-time {
+        font-size: 2em !important;
+    }
+
+    section > #div-image > img {
+        scale: 1.1;
+        margin: 20px;
+    }
+
+    section > #div-greeting {
+        font-size: 1.3em;
+    }
+}
