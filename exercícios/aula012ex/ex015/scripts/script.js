@@ -11,24 +11,37 @@ function showResult() {
     let age = sysYear - birthYear
 
     // Generating result
-    divResult.innerHTML = `<p>${genre == 'Homem'?'Um':'Uma'} ${genre} de ${age} anos.</p>`
     let imageName = ''
 
-    if (genre == 'Homem' && age < 12) {
-        imageName = 'child-man.png'
-    } else if (genre == 'Mulher' && age < 12) {
-        imageName = 'child-woman.png'
-    } else if (genre == 'Homem' && age < 50) {
-        imageName = 'young-man.png'
-    } else if (genre == 'Mulher' && age < 50) {
-        imageName = 'young-woman.png'
-    } else if (genre == 'Homem' && age >= 50) {
-        imageName = 'old-man.png'
-    } else if (genre == 'Mulher' && age >= 50) {
-        imageName = 'old-woman.png'
-    }
-    
+    if (birthYear == 0 || birthYear > sysYear) {
+        alert('[ERRO] Verifique os dados e tente novamente!')
+    } else {
+        if (genre == 'Homem') {
+            if (age < 12) {
+                imageName = 'child-man.png'
+            } else if (age < 30) {
+                imageName = 'young-man.png'
+            } else if (age < 50) {
+                imageName = 'adult-man.png'
+            } else {
+                imageName = 'old-man.png'
+            }
+        } else if (genre == 'Mulher') {
+            if (age < 12) {
+                imageName = 'child-woman.png'
+            } else if (age < 30) {
+                imageName = 'young-woman.png'
+            } else if (age < 50) {
+                imageName = 'adult-woman.png'
+            } else {
+                imageName = 'old-woman.png'
+            }
+        }
+
+    divResult.innerHTML = `<p>${genre == 'Homem'?'Um':'Uma'} ${genre} de ${age} anos.</p>`
     let imageNode = document.createElement('img')
     imageNode.src = 'images/' + imageName
     divResult.appendChild(imageNode)
+    }
+    
 }
