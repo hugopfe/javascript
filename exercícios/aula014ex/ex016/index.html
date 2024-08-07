@@ -10,14 +10,28 @@
 <body>
     <div id="container">
         <header>
-            <h1>Título</h1>
+            <h1>Contador</h1>
         </header>
         <section>
-            <div>
-                <p>Conteúdo</p>
+            <div id="form">
+                <div class="field">
+                    <label for="id-start">Início: </label>
+                    <input type="number" name="start" id="id-start" value="1">
+                </div>
+                <div class="field">
+                    <label for="id-end">Fim: </label>
+                    <input type="number" name="end" id="id-end" value="5">
+                </div>
+                <div class="field">
+                    <label for="id-step">Passo: </label>
+                    <input type="number" name="step" id="id-step" value="1">
+                </div>
+                <div>
+                    <button onclick="startCounting()">Enviar</button>
+                </div>
             </div>
-            <div>
-                <p>Conteúdo</p>
+            <div id="result">
+                <p>Preparando a contagem...</p>
             </div>
         </section>
         <footer><p>&copy;CursoemVídeo</p></footer>
