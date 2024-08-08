@@ -1,8 +1,17 @@
 @charset "UTF-8";
 
 @media screen and (min-width: 768px) {
+    body {
+        background-image: linear-gradient(to top, transparent 70%, rgba(255, 255, 255, 0.096));
+    }
+    
     section {
-        width: 700px;
-        height: 500px;
+        width: 500px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    section > div {
+        width: 50%;
     }
 }

@@ -29,22 +29,56 @@ header > h1 {
 }
 
 section {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    min-height: 200px;
     background-color: white;
     border-radius: 20px;
     box-shadow: 3px 3px 10px #00000a80;
     margin: 20px;
-
+    padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-section > div {
-    height: 50%;
+section > div#form {
+    font-size: 1.1em;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#form > div.field {
+    margin: 10px 0;
+}
+
+#form > div.field > input {
+    text-align: right;
+    width: 50px;
+}
+
+#form button {
+    font-size: 0.9em;
+    width: 60px;
+    height: 25px;
+}
+
+#result {
+    margin-top: 10px;
+}
+
+#result > select {
+    min-width: 200px;
+    font-size: 1em;
+    text-indent: 20px;
+}
+
+#result > select::-webkit-scrollbar {
+    display: none;
 }
 
 footer {
     font-weight: bold;
     font-size: 1.1em;
-    color: rgb(171, 196, 233);
+    color: rgba(255, 255, 255, 0.7);
 }

@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo Exercícios</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/media-queries.css">
 </head>
 <body>
     <div id="container">
         <header>
-            <h1>Título</h1>
+            <h1>Tabuada</h1>
         </header>
         <section>
-            <div>
-                <p>Conteúdo</p>
+            <div id="form">
+                <div class="field">
+                    <label for="id-number">Digite um número: </label>
+                    <input type="number" name="number" id="id-number" max="100" maxlength="3">
+                </div>
+                <div>
+                    <button onclick="generateMultiTable()">Gerar</button>
+                </div>
             </div>
-            <div>
-                <p>Conteúdo</p>
+            <div id="result">
+                <select name="multi-table" id="id-multi-table" size="10">
+                    <option>A tabuada aparecerá aqui...</option>
+                </select>
             </div>
         </section>
         <footer><p>&copy;CursoemVídeo</p></footer>
