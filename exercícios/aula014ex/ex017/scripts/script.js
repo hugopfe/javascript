@@ -7,7 +7,7 @@ function generateMultiTable() {
     if (formFactor.value.length == 0) {
         alert('Impossível gerar tabuada. \nCheque os dados e tente novamente.')
     } else {
-        // Getting user form data
+        // Generating result
         let factor = Number(formFactor.value)
 
         slctMultiTable.innerHTML = ''
