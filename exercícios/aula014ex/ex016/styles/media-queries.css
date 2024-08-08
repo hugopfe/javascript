@@ -6,6 +6,12 @@
     }
     
     section {
-        width: 700px;
+        width: 600px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    section > div {
+        width: 50%;
     }
 }
