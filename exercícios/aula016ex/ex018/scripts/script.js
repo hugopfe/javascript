@@ -7,9 +7,14 @@ function addNumber() {
    
    if (inputNumber.value.length == 0 || n <= 0 || n > 100) {
         alert('Número informado inválido \nTente novamente')
-   } else {
+    } else if (numbers.indexOf(n) != -1) {
+        alert('Número já incluído na lista!')
+    } else {
         appendNumberToArray(n)
    }
+
+   inputNumber.value = ""
+   inputNumber.focus()
     
 }
 
@@ -19,16 +24,22 @@ function analyseNumbers() {
     } else {
         let ulResultOutput = document.createElement('ul')
         
+        let totalNumbers = numbers.length
+        let highestNumber = getHighestNumber(numbers)
+        let lowestNumber = getLowestNumber(numbers)
+        let totalSum = numbers.reduce((total, value) => total += value)
+        let average = numbers.reduce((total, value) => total + value) / numbers.length
+        
         // Total numbers
-        ulResultOutput.innerHTML = `<li>Foram informado(s) ${numbers.length} número(s)</li>`
+        ulResultOutput.innerHTML = `<li>Foram informado(s) ${totalNumbers} número(s)</li>`
         // Highest number
-        ulResultOutput.innerHTML += `<li>O maior número da lista é ${getHighestNumber(numbers)}</li>`
+        ulResultOutput.innerHTML += `<li>O maior número da lista é ${highestNumber}</li>`
         // Lowest number
-        ulResultOutput.innerHTML += `<li>O menor número da lista é ${getLowestNumber(numbers)}</li>`
+        ulResultOutput.innerHTML += `<li>O menor número da lista é ${lowestNumber}</li>`
         // Sum
-        ulResultOutput.innerHTML += `<li>O total da soma é ${numbers.reduce((total, value) => total += value)}</li>`
+        ulResultOutput.innerHTML += `<li>O total da soma é ${totalSum}</li>`
         // Average
-        ulResultOutput.innerHTML += `<li>A média do(s) número(s) é ${numbers.reduce((total, value) => total + value) / numbers.length}`
+        ulResultOutput.innerHTML += `<li>A média do(s) número(s) é ${average}`
         
         divResultOutput.appendChild(ulResultOutput)
     }
