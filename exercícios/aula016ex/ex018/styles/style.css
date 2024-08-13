@@ -29,7 +29,7 @@ header > h1 {
 }
 
 section {
-    width: 300px;
+    width: 350px;
     min-height: 350px;
     background-color: white;
     border-radius: 20px;
@@ -39,27 +39,42 @@ section {
 
     text-align: center;
 
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
 section > div {
-    /* width: 100%; */
+    width: 100%;
+    margin: 5px;
+    font-size: 1.1em;
 }
 
-div#result > select {
-    width: 70%;
+#form input[type="number"] {
+    font-size: 1em;
 }
 
-div#button {
+div#feedback-output > select {
+    width: 85%;
+    font-size: 1em;
+}
+
+div.button {
     margin: 10px;
 }
 
-div#result > #result-output > p {
+div.button > button {
+    width: 80px;
+    height: 30px;
+    font-size: 1em;
+}
+
+div#result-output > ul {
+    list-style-position: inside;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1em;
+    text-align: left;
 }
 
 footer {

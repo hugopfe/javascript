@@ -1,4 +1,8 @@
 function addNumber() {    
+    if (divResultOutput.childNodes.length > 0) {
+        divResultOutput.removeChild(divResultOutput.childNodes[0])
+    }
+    
    let n = Number(inputNumber.value)
    
    if (inputNumber.value.length == 0 || n <= 0 || n > 100) {
@@ -13,17 +17,20 @@ function analyseNumbers() {
     if (numbers.length == 0) {   
         alert('Adicione números e tente novamente!')
     } else {
+        let ulResultOutput = document.createElement('ul')
+        
         // Total numbers
-        divResultOutput.innerHTML = `<p>Foram informados ${numbers.length} números no total</p>`
-
+        ulResultOutput.innerHTML = `<li>Foram informado(s) ${numbers.length} número(s)</li>`
         // Highest number
-        divResultOutput.innerHTML += `<p>O maior número da lista é ${getHighestNumber(numbers)}</p>`
+        ulResultOutput.innerHTML += `<li>O maior número da lista é ${getHighestNumber(numbers)}</li>`
         // Lowest number
-        divResultOutput.innerHTML += `<p>O menor número da lista é ${getLowestNumber(numbers)}</p>`
+        ulResultOutput.innerHTML += `<li>O menor número da lista é ${getLowestNumber(numbers)}</li>`
         // Sum
-        divResultOutput.innerHTML += `<p>Somando os números da lista o total é ${sum(numbers)}</p>`
-
+        ulResultOutput.innerHTML += `<li>O total da soma é ${numbers.reduce((total, value) => total += value)}</li>`
         // Average
+        ulResultOutput.innerHTML += `<li>A média do(s) número(s) é ${numbers.reduce((total, value) => total + value) / numbers.length}`
+        
+        divResultOutput.appendChild(ulResultOutput)
     }
 }
 
@@ -62,15 +69,16 @@ function sum(nArray) {
     let totalSum = 0
     
     for (i in nArray) {
-        totalSum += nArray
+        totalSum += nArray[i]
     }
 
-    return nArray
+    return totalSum
 }
 
 // Getting DOM elements
 const inputNumber = document.querySelector('#id-number')
 const selectNumbersList = document.querySelector('#id-numbers-list')
+const divFeedbackOutput = document.querySelector('#feedback-output')
 const divResultOutput = document.querySelector('#result-output')
 
 // Getting user data
