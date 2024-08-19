@@ -11,57 +11,57 @@
 <body>
     <main>
         <section>
-            <table id="calculator">
-                <colgroup>
-                    <col class="c1">
-                    <col class="c2">
-                    <col class="c3">
-                    <col class="c4">
-                </colgroup>
-                <tr>
-                    <td id="calc-display" colspan="4">0</td>
-                </tr>
-                <tr>
-                    <td><button onclick="pressButton('C')">C</button></td>
-                    <td><button onclick="pressButton('sqrt')">&radic;</button></td>
-                    <td>
-                        <button onclick="pressButton('backspace')" id="backspace">
-                            <span class="material-symbols-outlined">
-                            backspace
-                            </span>
-                        </button>
-                    <td><button onclick="pressButton('/')">&divide;</button></td>
-                </td>
-                </tr>
-                <tr>
-                    <td><button onclick="pressButton('\(')">&#40;</button></td>
-                    <td><button onclick="pressButton(')')">&#41;</button></td>
-                    <td><button onclick="pressButton('**2')">x<sup>2</sup></button></td>
-                    <td><button onclick="pressButton('*')">&times;</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="pressButton('7')">7</button></td>
-                    <td><button onclick="pressButton('8')">8</button></td>
-                    <td><button onclick="pressButton('9')">9</button></td>
-                    <td><button onclick="pressButton('-')">-</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="pressButton('4')">4</button></td>
-                    <td><button onclick="pressButton('5')">5</button></td>
-                    <td><button onclick="pressButton('6')">6</button></td>
-                    <td><button onclick="pressButton('+')">+</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="pressButton('1')">1</button></td>
-                    <td><button onclick="pressButton('2')">2</button></td>
-                    <td><button onclick="pressButton('3')">3</button></td>
-                    <td rowspan="2"><button onclick="pressButton('=')">=</button></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button onclick="pressButton('0')">0</button></td>
-                    <td><button onclick="pressButton(',')">,</button></td>
-                </tr>
-            </table>
+            <div id="calculator">
+                <div id="calc-display">888888888888888888888</div>
+                <table>
+                    <colgroup>
+                        <col class="c1">
+                        <col class="c2">
+                        <col class="c3">
+                        <col class="c4">
+                    </colgroup>
+                    <tr>
+                        <td><button onclick="pressButton('C')">C</button></td>
+                        <td><button onclick="pressButton('sqrt')">&radic;</button></td>
+                        <td>
+                            <button onclick="pressButton('backspace')" id="backspace">
+                                <span class="material-symbols-outlined">
+                                backspace
+                                </span>
+                            </button>
+                        <td><button onclick="pressButton('/')">&divide;</button></td>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="pressButton('\(')">&#40;</button></td>
+                        <td><button onclick="pressButton(')')">&#41;</button></td>
+                        <td><button onclick="pressButton('**2')">x<sup>2</sup></button></td>
+                        <td><button onclick="pressButton('*')">&times;</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="pressButton('7')">7</button></td>
+                        <td><button onclick="pressButton('8')">8</button></td>
+                        <td><button onclick="pressButton('9')">9</button></td>
+                        <td><button onclick="pressButton('-')">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="pressButton('4')">4</button></td>
+                        <td><button onclick="pressButton('5')">5</button></td>
+                        <td><button onclick="pressButton('6')">6</button></td>
+                        <td><button onclick="pressButton('+')">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="pressButton('1')">1</button></td>
+                        <td><button onclick="pressButton('2')">2</button></td>
+                        <td><button onclick="pressButton('3')">3</button></td>
+                        <td rowspan="2"><button onclick="pressButton('=')">=</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button onclick="pressButton('0')">0</button></td>
+                        <td><button onclick="pressButton(',')">,</button></td>
+                    </tr>
+                </table>
+            </div>
         </section>
     </main>
     <script src="scripts/script.js"></script>
