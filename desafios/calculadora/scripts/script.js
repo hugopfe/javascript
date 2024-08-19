@@ -15,6 +15,7 @@ function pressButton(btn) {
         calculate(displayText)
     } else if (btn == '(') {
         if ('0'.search(displayText.slice(-1) == 1) && displayText.length == 1) { // Checking if display is empty
+            updateDisplayText(btn)
         } else if ('0123456789'.search(displayText.slice(-1)) == -1) { // Check if has a number before
             updateDisplayText(btn)
         } else {
