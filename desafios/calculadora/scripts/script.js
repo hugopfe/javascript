@@ -9,29 +9,29 @@ function pressButton(btn) {
         clearDisplay()
     } else if (btn == 'backspace') {
         // Erase a digit
-        setDisplayText(displayText.length == 1?'0':displayText.slice(0, -1))
+        updateDisplayText(displayText.length == 1?'0':displayText.slice(0, -1), true)
     } else if (btn == '=') {
         // Calculate
         calculate(displayText)
     } else if (btn == '(') {
-        // Check if has a number or a operator before
-        if ('0123456789'.search(displayText.slice(-1)) == -1) { // FIX IT!!
-            setDisplayText(btn)
+        if ('0'.search(displayText.slice(-1) == 1) && displayText.length == 1) { // Checking if display is empty
+        } else if ('0123456789'.search(displayText.slice(-1)) == -1) { // Check if has a number
+            updateDisplayText(btn)
         } else {
-            setDisplayText('*'+btn)
+            updateDisplayText('*' + btn)
         }
     } else {
-        setDisplayText(btn)
+        updateDisplayText(btn)
     }
 }
 
 function calculate(mathAccount) {
-    setDisplayText(eval(mathAccount))
+    updateDisplayText(eval(mathAccount), true)
 }
 
-function setDisplayText(inputValue) {
-    // Insert input in diplay
-    if (tdDisplay.innerText == '0') {
+function updateDisplayText(inputValue, substitute=false) {
+    // Insert or update input in display
+    if (tdDisplay.innerText == '0' || substitute) {
         tdDisplay.innerText = inputValue
     } else {
         tdDisplay.innerText += inputValue
