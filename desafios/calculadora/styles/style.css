@@ -81,6 +81,7 @@ table colgroup > col {
     height: 60px;
     overflow: hidden;
     direction: rtl;
+    line-height: 60px !important;
 }
 
 table #backspace {
