@@ -15,18 +15,28 @@ function pressButton(btn) {
         calculate(displayText)
     } else if (btn == '(') {
         if ('0'.search(displayText.slice(-1) == 1) && displayText.length == 1) { // Checking if display is empty
-        } else if ('0123456789'.search(displayText.slice(-1)) == -1) { // Check if has a number
+        } else if ('0123456789'.search(displayText.slice(-1)) == -1) { // Check if has a number before
             updateDisplayText(btn)
         } else {
             updateDisplayText('*' + btn)
         }
+    } else if (btn == 'sqrt') {
+        updateDisplayText(btn + '(')
     } else {
         updateDisplayText(btn)
     }
 }
 
 function calculate(mathAccount) {
-    updateDisplayText(eval(mathAccount), true)
+    if (mathAccount.search('sqrt') != '-1') { // Check if is a square root operation
+        let tempMathAccount = 'Math.' + mathAccount
+        if (tempMathAccount.slice(-1) != ')') { // Check if parentesis are closed
+            tempMathAccount += ')'
+        }
+        updateDisplayText(eval(tempMathAccount), true)
+    } else {
+        updateDisplayText(eval(mathAccount), true)
+    }
 }
 
 function updateDisplayText(inputValue, substitute=false) {

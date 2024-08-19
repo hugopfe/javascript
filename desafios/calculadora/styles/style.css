@@ -80,7 +80,7 @@ table colgroup > col {
     padding: 0px 5px;
     height: 60px;
     overflow: hidden;
-    direction: rtl;
+    /* direction: rtl; */
     line-height: 60px !important;
 }
 
