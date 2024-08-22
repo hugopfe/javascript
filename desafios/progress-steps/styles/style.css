@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > div {
+    margin: 25px 0;
+}
+
+ul {
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 400px;
+}
+
+li {
+    display: inline-block;
+
+    background-color: white;
+    border: 3px solid rgb(207, 207, 207);
+    border-radius: 50%;
+    
+    padding: 5px;
+    
+    position: relative;
+
+    transition: border-color 100ms;
+}
+
+li > span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    
+    font-size: 1.1em;
+    text-align: center;
+    color: darkgray;
+    
+}
+
+li:nth-child(n+2)::before {
+    content: "";
+
+    position: absolute;
+    left: -70px;
+    top: 45%;
+    z-index: -1;
+    
+    width: 70px;
+    border-bottom: 4px solid rgb(207, 207, 207);
+}
+
+li.actual-step {
+    border-color: rgb(36, 108, 216);
+}
+
+li.actual-step::before {
+    border-color: rgb(36, 108, 216);
+    animation: fill-bar 100ms ease-out 1;
+}
+
+div#buttons {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    width: 110px;
+    height: 30px;
+
+    color: white;
+    background-color: rgb(36, 108, 216);
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+button.inactive {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+button.inactive:hover {
+    filter: none;
+}
