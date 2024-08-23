@@ -29,6 +29,20 @@ function update() {
     }
 
     if (actualProgress < activatedCircles.length-1) {
-        circles[actualProgress].classList.remove('active')
+        circles[actualProgress+1].classList.remove('active')
+    }
+
+    progressBar.style.width = actualProgress / (circles.length - 1) * 100 + '%'
+
+    if (actualProgress === 0) {
+        prevButton.disabled = true
+    } else {
+        prevButton.disabled = false
+    }
+
+    if (actualProgress === circles.length-1) {
+        nextButton.disabled = true
+    } else {
+        nextButton.disabled = false
     }
 }
