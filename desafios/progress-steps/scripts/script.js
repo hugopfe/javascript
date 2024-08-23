@@ -1,34 +1,34 @@
-const liSteps = document.getElementsByTagName('li')
-const prevButton = document.getElementById('prev-btn')
-const nextButton = document.getElementById('next-btn')
+const prevButton = document.getElementById('prev')
+const nextButton = document.getElementById('next')
+const progressBar = document.getElementById('progress-bar')
+const circles = document.querySelectorAll('.circle')
 
-function nextStep() {
-    let liActivatedSteps = document.getElementsByClassName('actual-step')
+var actualProgress = 0
 
-    for (let c in liSteps) {
-        if (liSteps[c].classList[0] != 'actual-step') {
-            liSteps[c].classList.add('actual-step')
-            
-            if (liActivatedSteps.length > 1 && prevButton.classList.contains('inactive')) {
-                prevButton.classList.remove('inactive')
-            } else if (liActivatedSteps.length == 4) {
-                nextButton.classList.add('inactive')
-            }
-            break
-        }
-    }
-}
-
-function prevStep() {
-    let liActivatedSteps = document.getElementsByClassName('actual-step')
-
-    liActivatedSteps[liActivatedSteps.length-1].classList.remove('actual-step')
-
-    if (liActivatedSteps.length == 1) {
-        prevButton.classList.add('inactive')
+prevButton.addEventListener('click', () => {
+    if (actualProgress > 0) {
+        actualProgress--
     }
 
-    if (liActivatedSteps.length < 4) {
-        nextButton.classList.remove('inactive')
+    update()
+})
+
+nextButton.addEventListener('click', () => {
+    if (actualProgress < circles.length-1) {
+        actualProgress++
+    }
+
+    update()
+})
+
+function update() {
+    let activatedCircles = document.getElementsByClassName('active')
+    
+    if (actualProgress > activatedCircles.length-1) {
+        circles[actualProgress].classList.add('active')
+    }
+
+    if (actualProgress < activatedCircles.length-1) {
+        circles[actualProgress].classList.remove('active')
     }
 }
