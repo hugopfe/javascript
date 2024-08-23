@@ -76,7 +76,6 @@ li.actual-step {
 
 li.actual-step::before {
     border-color: rgb(36, 108, 216);
-    animation: fill-bar 100ms ease-out 1;
 }
 
 div#buttons {
