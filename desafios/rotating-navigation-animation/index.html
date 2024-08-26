@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating menu animation</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/831899fe19.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <div id="page">
+            <div id="menu-button">
+                <i id="open" class="fa-solid fa-bars"></i>
+                <i id="close" class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <article>
+                <h1>Título</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit qui necessitatibus velit rerum molestiae et ipsam sunt deleniti, quibusdam itaque, officia sequi eveniet amet ab beatae non odit ad veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas earum vero voluptatum recusandae officiis ea pariatur dolor nesciunt doloribus nostrum voluptates nisi neque consequatur laudantium, quam in? At, quo.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint pariatur atque aperiam, dolorum eius facilis commodi eum veniam delectus neque excepturi suscipit et eveniet ipsam laborum vel inventore iusto sit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure inventore sequi, facere sit impedit corrupti quis corporis sapiente ipsum facilis deserunt illum! Ex magni commodi impedit quia reiciendis consectetur ratione.</p>
+                <img src="images/tiger.png" alt="Tigre branco">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptates accusamus architecto eum hic, libero, tenetur quas vero provident voluptas nihil sequi neque est recusandae quis nulla repudiandae quod dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias facilis, tenetur error pariatur doloribus architecto at quo, ipsa sunt maxime nihil vero iure! Unde maxime aut eius, distinctio non et?</p>
+            </article>
+        </div>
+        <div id="rotating-menu">
+            <ul id="menu">
+                <li style="--i: 1;"><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li style="--i: 2;"><a href="#"><i class="fa-solid fa-user"></i> About</a></li>
+                <li style="--i: 3;"><a href="#"><i class="fa-solid fa-phone"></i> Contact</a></li>
+            </ul>
+        </div>
+    </main>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
