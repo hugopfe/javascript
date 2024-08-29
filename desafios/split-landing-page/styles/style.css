@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    font-family: 'Lato';
+    color: white;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+}
+
+div {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-wrap: nowrap;
+    
+    transition: width 500ms;
+}
+
+div#left {
+    float: left;
+    background: rgb(15, 145, 219) url(https://assetsio.gnwcdn.com/playstation-5-header-9-1_HxCKYLr.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp) center no-repeat;
+    background-size: cover;
+}
+
+div#left:hover {
+    width: 120%;
+}
+
+div#left > #wrapper {
+    width: 100%;
+    background-color: #003099b3;
+}
+
+div#right {
+    background: rgb(31, 31, 31) url(https://i.ytimg.com/vi/0tUqIHwHDEc/maxresdefault.jpg) center no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+div#right:hover {
+    width: 120%;
+}
+
+div#right > #wrapper {
+    width: 100%;
+    background-color: #181818a1;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    border: 3px solid white;
+    color: inherit;
+    font-size: 1.7em;
+
+    height: 80px;
+    width: 200px;
+
+    margin: 30px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#left a:hover {
+    background-color: #003099;
+}
+
+#right a:hover {
+    background-color: green;
+}
