@@ -15,5 +15,9 @@ function getRandomVerse() {
 async function requestBibleApi (ref='john 3:16') {
     fetch(`https://bible-api.com/${ref}?translation=almeida`).then(res => {
         return res.json()
-    }).then(verse => divVerse.innerHTML = `<p>${verse.text}<br><b>${verse.reference}</b></p>`)
+    }).then(verse => setVerse(`<p>${verse.text}<br><b>${verse.reference}</b></p>`))
+}
+
+function setVerse (text) {
+    divVerse.innerHTML = text
 }
