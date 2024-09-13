@@ -4,7 +4,7 @@ const notesArr = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B
 const degree = [0, 2, 4, 5, 7, 9, 11]
 const setHarmonicField = (tone) => {
         return degree.map((v, i) => {
-        return notesArr[(v + notesArr.indexOf(tone))%12]
+        return [2, 4, 9, 11].includes(v)?notesArr[(v + notesArr.indexOf(tone))%12]+'m':notesArr[(v + notesArr.indexOf(tone))%12]
     })
 }
 
