@@ -15,12 +15,13 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    main {
-        font-size: 1.2em;
+    h1 {
+        font-size: 1.5em;
     }
 
     div#table {
-        min-width: none;
+        min-width: 100%;
+        height: 130px !important;
     }
     
     label {
@@ -70,7 +71,6 @@ table {
 
 td, th {
     border: 1px solid rgb(116, 116, 116);
-    padding: 10px;
     text-align: center;
 }
 
