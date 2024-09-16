@@ -2,7 +2,7 @@
  Repositório para o curso de JavaScript do CursoemVídeo
 ---
 ## Projetos
----
+
 | # | Projeto | Visualizar |
 | --- | --- | --- |
 | 01 | [Calculator](https://github.com/hugopfe/javascript/tree/main/desafios/calculator) | [Visualizar](https://hugopfe.github.io/javascript/desafios/calculator) |
