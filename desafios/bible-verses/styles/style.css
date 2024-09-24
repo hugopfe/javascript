@@ -42,13 +42,19 @@ section {
         width: 90%;
     }
 
-    div {
+    #verse {
         font-size: 1.1rem;
     }
 }
 
-div {
+#verse p {
+    text-align: justify;
     margin: 20px 0;
+}
+
+#verse #ref {
+    text-align: center;
+    font-weight: bold;
 }
 
 button {
