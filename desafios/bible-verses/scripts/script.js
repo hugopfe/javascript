@@ -18,12 +18,24 @@ const arrVerse = [
     'isaias 55:6'
 ]
 
+shuffleArray(arrVerse)
+
 button.addEventListener ('click', () => {
     divVerse.className = 'transition-on'
     requestBibleApi(getVerse())
 })
 
 window.addEventListener('load', () => {requestBibleApi(getVerse())})
+
+function shuffleArray(arr) {
+    let currentIndex = arr.length
+
+    while (currentIndex != 0) {
+        let randomIndex = Math.floor(Math.random()*currentIndex)
+        currentIndex--
+        [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]]
+    }
+}
 
 function getVerse() {
     let nextVerse = arrVerse[0]
