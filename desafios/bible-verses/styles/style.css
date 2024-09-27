@@ -47,6 +47,16 @@ section {
     }
 }
 
+.transition-on {
+    opacity: 0;
+    transition: 100ms;
+}
+
+.transition-off {
+    opacity: 1;
+    transition: 100ms;
+}
+
 #verse p {
     text-align: justify;
     margin: 20px 0;

@@ -1,6 +1,7 @@
 const divVerse = document.querySelector('div#verse')
 const button = document.querySelector('button')
 const arrVerse = [
+    '1ti 4:12',
     'efesios 2:8',
     'filipenses 2:5-11', 
     'hebreus 4:12', 
@@ -16,9 +17,9 @@ const arrVerse = [
     'isaias 49:15',
     'isaias 55:6'
 ]
-var lastVerse = ''
 
 button.addEventListener ('click', () => {
+    divVerse.className = 'transition-on'
     requestBibleApi(getVerse())
 })
 
@@ -38,4 +39,5 @@ async function requestBibleApi (ref='john 3:16') {
 
 function setVerse (text) {
     divVerse.innerHTML = text
+    divVerse.className = 'transition-off'
 }
