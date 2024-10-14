@@ -15,7 +15,8 @@ const arrVerse = [
     'salmos 16:11',
     'isaias 43:1-2',
     'isaias 49:15',
-    'isaias 55:6'
+    'isaias 55:6',
+    'salmos 91:1'
 ]
 
 shuffleArray(arrVerse)
